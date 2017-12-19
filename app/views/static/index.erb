@@ -1,0 +1,96 @@
+<div class="full_container">
+<div id="container_short">
+
+	<h1 id="header_logo">bitly</h1>
+<nav class="topbar">	
+	<ul class="topbarList">
+		<li class="topbarItem">TOUR</li>
+		<li class="topbarItem">ENTERPRISE</li>
+		<li class="topbarItem">RESOURCES</li>
+		<li class="topbarItem">BLOG</li>
+		<li class="topbarItem">ABOUT</li>
+	</ul>
+</nav>
+<div id="signup">
+	<ul class="topbarList">
+		<li class="topbarItem">LOGIN</li>
+		<li class="topbarItem">SIGNUP</li>
+	</ul>
+</div>
+
+</div>
+
+	<div class="header">
+		<h1>THE LINK KNOWS ALL. SO CAN YOU.</h1>
+		<h2>Measure your links with Bitly, the world's leading link management platform
+		<div>
+			<form action="/submit" method="post" id="submitForm">
+			  <input id="textbox" type="text" name="URL" placeholder="Paste a link to shorten it">
+			  <input id="enterbox" type="submit" value="Shorten">
+			</form>
+		</div> 
+		<div id="filler">
+			<button onclick="toggleTable()">Hide</button>
+		</div>
+	</div>
+
+</div>
+
+
+<div id="table" >
+	<table width="60%">
+		<tr>
+		    <th class='tablestyle'>Website URL</th>
+		    <th class='tablestyle'>Simplify URL</th>
+		    <th class='tablestyle'>Visited Count</th>
+	  	</tr>
+
+	  	<% Url.all.each do |t| %>
+	  	<tr>
+		    <td>
+				<a href="<%= t.long_url %>"> <%= t.long_url %> </a>	
+			</td>
+		    <td>
+				<a href="<%= t.short_url %>">https://roxasbitly.herokuapp.com/<%= t.short_url %></a>
+			</td>
+			<td>
+				<%= t.count %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+	
+	<!-- <form action="/delete" method="post">
+		<button type="submit" onclick="alert(All Link is RESET!)">Reset</button> -->
+		<!-- <input type="submit" onclick="alert(All link is reset!')" value="Reset"> -->
+	<!-- </form> -->
+</div>
+
+<footer id="footer">
+	<ul>
+		<li><a href="#">BLOG</a></li>
+		<li><a href="#">SUPPORT</a></li>
+		<li><a href="#">CONTACT</a></li>
+		<li><a href="#">DEVELOPERS</a></li>
+		<li><a href="#">PRIVACY POLICY</a></li>
+		<li><a href="#">TERMS OF SERVICE</a></li>
+		<li><a href="#">PARTNERS</a></li>
+		<li><a href="#">CAREERS</a></li>
+	</ul>
+	<div id="footerLogo">
+		<img src="/img/bitly.png">
+	</div>
+	<ul id="socialicon">
+		<li><a href="#"><img src="/img/fb.png"></a></li>
+		<li><a href="#"><img src="/img/twitter.png"></a></li>
+		<li><a href="#"><img src="/img/linkedin.png"></a></li>
+		<li><a href="#"><img src="/img/instagram.png"></a></li>
+	</ul>
+	<p>&copy; 2017 Bitly&trade; Handmade in NEXT</p>
+</footer>
+
+
+
+
+
+
